@@ -1,6 +1,4 @@
-const { products } = require("../data/products.js");
-
 exports.Product = {
-  seller: (parent, args, context) =>
+  seller: (parent, args, {products}) =>
     products.find((product) => product.id === parent.id).seller,
 };
