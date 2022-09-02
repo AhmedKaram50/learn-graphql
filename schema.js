@@ -5,7 +5,7 @@ exports.typeDefs = gql`
     hello: String
     name: String
     age: Int
-    products: [Product]
+    products(filter: ProductsFilterInput): [Product]
     product(id: ID!): Product
   }
 
@@ -15,6 +15,7 @@ exports.typeDefs = gql`
     image: String
     price: String
     seller: Seller
+    reviews: Boolean
   }
 
   type Seller {
@@ -23,4 +24,9 @@ exports.typeDefs = gql`
     first_name: String
     products: [Product!]!
   }
+
+  input ProductsFilterInput {
+    reviews: Boolean
+  }
+
 `;

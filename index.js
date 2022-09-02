@@ -14,7 +14,6 @@ const resolvers = {
   Seller
 };
 
-
 const server = new ApolloServer({
   typeDefs,
   resolvers,
