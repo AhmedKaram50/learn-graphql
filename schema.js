@@ -22,7 +22,7 @@ exports.typeDefs = gql`
     id: ID!
     last_name: String
     first_name: String
-    products: [Product!]!
+    products(filter: ProductsFilterInput): [Product!]!
   }
 
   input ProductsFilterInput {

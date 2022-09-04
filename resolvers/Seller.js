@@ -1,7 +1,10 @@
 exports.Seller = {
-  products: (parent, args, { products }) => {
+  products: (parent, {filter}, { products }) => {
     return products.filter(
-      (product) => product.seller != null && product.seller.id === 4
+      (product) => {
+        if (filter) return product.seller != null && product.seller.id === 4 && product.reviews === filter.reviews
+        return product.seller != null && product.seller.id === 4
+      }
     );
   },
 };
