@@ -9,12 +9,23 @@ exports.typeDefs = gql`
     product(id: ID!): Product
   }
 
+  type Mutation {
+    addProduct(input: addProductInput!): Product!
+  }
+
   type Product {
     id: ID!
     name: String
     image: String
     price: String
     seller: Seller
+    reviews: Boolean
+  }
+
+  input addProductInput {
+    name: String
+    image: String
+    price: String
     reviews: Boolean
   }
 
@@ -27,6 +38,7 @@ exports.typeDefs = gql`
 
   input ProductsFilterInput {
     reviews: Boolean
+    time: Int
   }
 
 `;

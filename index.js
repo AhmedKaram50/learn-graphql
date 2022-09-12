@@ -5,13 +5,15 @@ const { typeDefs } = require("./schema.js");
 const { Query } = require("./resolvers/Query.js");
 const { Product } = require("./resolvers/Product.js");
 const { Seller } = require("./resolvers/Seller.js");
+const { Mutation } = require("./resolvers/Mutation.js");
 // Data 
 const { products } = require("./data/products.js");
 
 const resolvers = {
   Query,
   Product,
-  Seller
+  Seller,
+  Mutation
 };
 
 const server = new ApolloServer({
